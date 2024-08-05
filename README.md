@@ -121,7 +121,7 @@ Install AWS CLI and configure it with your credentials.
 
 ### Run the Scripts:
 
-1. Start your EC2 instance and ensure Zookeeper and Kafka are running.
+1. Start your EC2 instance and ensure Zookeeper and Kafka Server are running.
 2. Execute kafkaProducer.py and kafkaConsumer.py scripts.
 3. Refresh your S3 bucket to see the received data.
 4. Refresh Athena to query the ingested data.
