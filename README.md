@@ -106,8 +106,8 @@ bin/kafka-console-consumer.sh --topic binance_data --bootstrap-server <YOUR_PUBL
 ## Integrate with AWS S3 and Athena
 ### Create an S3 Bucket:
 
-Create an S3 bucket via the AWS Management Console.
-Provide the bucket path in the kafkaConsumer.py script to store Binance data in JSON format.
+1. Create an S3 bucket via the AWS Management Console.
+2. Provide the bucket path in the kafkaConsumer.py script to store Binance data in JSON format.
 
 ### Configure AWS on Your Local Machine:
 
@@ -115,22 +115,31 @@ Install AWS CLI and configure it with your credentials.
 
 ### Set Up AWS Glue Crawler:
 
-Create an AWS Glue Crawler to automatically catalog the data in your S3 bucket.
-Configure it to upload data to Athena from the S3 bucket.
-Ensure that the IAM Role has the necessary permissions to access Glue, S3, and Athena. Assign administrator access when creating the IAM Role.
+1. Create an AWS Glue Crawler to automatically catalog the data in your S3 bucket.
+2. Configure it to upload data to Athena from the S3 bucket.
+3. Ensure that the IAM Role has the necessary permissions to access Glue, S3, and Athena. Assign administrator access when creating the IAM Role.
 
 ### Run the Scripts:
 
-Start your EC2 instance and ensure Zookeeper and Kafka are running.
-Execute kafkaProducer.py and kafkaConsumer.py scripts.
-Refresh your S3 bucket to see the received data.
-Refresh Athena to query the ingested data.
+1. Start your EC2 instance and ensure Zookeeper and Kafka are running.
+2. Execute kafkaProducer.py and kafkaConsumer.py scripts.
+3. Refresh your S3 bucket to see the received data.
+4. Refresh Athena to query the ingested data.
 
 ## Install Required Python Packages
+
+```
 pip install websocket-client
+```
+
+```
 pip install kafka-python
+```
+
+```
 pip install s3fs
+```
 
 ## Notes
-Replace <YOUR_PUBLIC_IP> with the actual public IP address of your EC2 instance.
-Ensure network security groups and firewall rules allow traffic on port 9092.
+1. Replace <YOUR_PUBLIC_IP> with the actual public IP address of your EC2 instance.
+2. Ensure network security groups and firewall rules allow traffic on port 9092.
